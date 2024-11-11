@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_list">
+        <item>1 сезон</item>
+        <item>2 сезон</item>
+        <item>3 сезон</item>
+        <item>4 сезон</item>
+        <item>5 сезон</item>
+        <item>6 сезон</item>
+        <item>7 сезон</item>
+        <item>8 сезон</item>
+        <item>9 сезон</item>
+        <item>10 сезон</item>
+        <item>11 сезон</item>
+        <item>12 сезон</item>
+        <item>13 сезон</item>
+        <item>14 сезон</item>
+        <item>15 сезон</item>
+    </string-array>
+    <string-array name="s1">
+        <item>Дин Винчестер|dean_s1.jpg|s1.html</item>
+        <item>Сэм Винчестер|sam_s1.jpg|s1.html</item>
+    </string-array>
+    <string-array name="s2">
+        <item>Дин Винчестер|dean_s2.jpg|s2.html</item>
+        <item>Сэм Винчестер|sam_s2.jpg|s2.html</item>
+    </string-array>
+    <string-array name="s3">
+        <item>Дин Винчестер|dean_s3.jpg|s3.html</item>
+        <item>Сэм Винчестер|sam_s3.jpg|s3.html</item>
+    </string-array>
+    <string-array name="s4">
+        <item>Дин Винчестер|dean_s4.jpg|s4.html</item>
+        <item>Сэм Винчестер|sam_s4.jpg|s4.html</item>
+    </string-array>
+    <string-array name="s5">
+        <item>Дин Винчестер|dean_s5.jpg|s5.html</item>
+        <item>Сэм Винчестер|sam_s5.jpg|s5.html</item>
+    </string-array>
+    <string-array name="s6">
+        <item>Дин Винчестер|dean_s6.jpg|s.html</item>
+        <item>Сэм Винчестер|sam_s6.jpg|s.html</item>
+    </string-array>
+    <string-array name="s7">
+        <item>Дин Винчестер|dean_s7.jpg|s.html</item>
+        <item>Сэм Винчестер|sam_s7.jpg|s.html</item>
+    </string-array>
+    <string-array name="s8">
+        <item>Дин Винчестер|dean_s8.jpg|s.html</item>
+        <item>Сэм Винчестер|sam_s8.jpg|s.html</item>
+    </string-array>
+    <string-array name="s9">
+        <item>Дин Винчестер|dean_s9.jpg|s.html</item>
+        <item>Сэм Винчестер|sam_s9.jpg|s.html</item>
+    </string-array>
+    <string-array name="s10">
+        <item>Сэм Винчестер|sam_s10.jpg|s.html</item>
+    </string-array>
+    <string-array name="s11">
+        <item>Сэм Винчестер|sam_s11.jpg|s.html</item>
+    </string-array>
+    <string-array name="s12">
+        <item>Сэм Винчестер|sam_s12.jpg|s.html</item>
+    </string-array>
+    <string-array name="s13">
+        <item>Дин Винчестер|dean_s13.jpg|s.html</item>
+        <item>Сэм Винчестер|sam_s13.jpg|s.html</item>
+    </string-array>
+    <string-array name="s14">
+        <item>Сэм Винчестер|sam_s14.jpg|s.html</item>
+    </string-array>
+    <string-array name="s15">
+        <item>Сэм Винчестер|sam_s15.jpg|s.html</item>
+    </string-array>
+</resources>
