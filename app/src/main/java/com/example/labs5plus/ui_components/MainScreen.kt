@@ -30,7 +30,7 @@ fun MainScreen(context: Context, onClick : (ListItem) -> Unit){
     val mainList = rememberSaveable { mutableStateOf(
         getListItemsByIndex(0, context)
     ) }
-    val selectedIndex = remember { mutableIntStateOf(0) }
+    val selectedIndex = rememberSaveable { mutableIntStateOf(0) }
 
     ModalNavigationDrawer(
         drawerState = drawerState,
