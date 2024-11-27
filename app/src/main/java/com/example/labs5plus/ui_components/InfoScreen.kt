@@ -65,7 +65,6 @@ fun HtmlLoader(htmlName: String){
                 webViewClient = object : WebViewClient() {
                     override fun onPageStarted(view: WebView, url: String?, favicon: Bitmap?) {
                         backEnabled = view.canGoBack()
-                        /*super.onPageStarted(view, url, favicon)*/
                     }
                 }
                 settings.javaScriptEnabled = true
