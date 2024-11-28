@@ -30,6 +30,11 @@ fun MainScreen(mainViewModel: MainViewModel = hiltViewModel(), onClick: (ListIte
   val selectedIndex = rememberSaveable { mutableIntStateOf(0) }
   val mainList = mainViewModel.mainList
   mainViewModel.getAllItemsByCategory(topBarTitle.value)
+  if (topBarTitle.value == "Избранные") {
+    mainViewModel.getFavorites()
+  } else {
+    mainViewModel.getAllItemsByCategory(topBarTitle.value)
+  }
 
   ModalNavigationDrawer(
     drawerState = drawerState,
@@ -55,15 +60,20 @@ fun MainScreen(mainViewModel: MainViewModel = hiltViewModel(), onClick: (ListIte
     content = {
       Scaffold(
         topBar = {
-          MainTopBar(title = topBarTitle.value, drawerState = drawerState/*, event = eventt*/)
+          MainTopBar(title = topBarTitle.value, drawerState = drawerState){
+            topBarTitle.value = "Избранные"
+            mainViewModel.getFavorites()
+          }
         }
       ) { innerPadding ->
         LazyColumn(modifier = Modifier
             .padding(innerPadding)
             .fillMaxSize()) {
-          items(mainList.value) { item ->
-            MainListItem(item = item) { listItem ->
-              onClick(listItem)
+          if (mainList.value.isNotEmpty()) {
+            items(mainList.value) { item ->
+              MainListItem(item = item) { listItem ->
+                onClick(listItem)
+              }
             }
           }
         }

@@ -15,7 +15,8 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTopBar(title: String, drawerState: DrawerState/*, event: DrawerEvents?*/){
+fun MainTopBar(title: String, drawerState: DrawerState,
+               onFavClick: () -> Unit){
     val coroutine = rememberCoroutineScope()
     TopAppBar(
         title = {
@@ -27,10 +28,13 @@ fun MainTopBar(title: String, drawerState: DrawerState/*, event: DrawerEvents?*/
             }) { Icon(imageVector = Icons.Default.Menu, contentDescription = "Меню")}
         },
         actions = {
-            IconButton(onClick = {  }) {
-                //if(title == R.array.drawer_list)
-                if(title == "Любимки") Icon(imageVector = Icons.Default.Favorite,
-                    contentDescription = "Любимый раздел")
+            IconButton(
+                onClick = { onFavClick() }
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Favorite,
+                    contentDescription = "Favorite"
+                )
             }
         }
     )
