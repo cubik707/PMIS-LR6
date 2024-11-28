@@ -9,8 +9,18 @@ lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.2"
 composeBom = "2024.04.01"
 navigationCompose = "2.8.3"
+roomRuntime = "2.6.1"
+runtimeLivedata = "1.6.5"
+ksp = "1.9.0-1.0.13"
+
 
 [libraries]
+androidx-runtime-livedata = "androidx.lifecycle:lifecycle-runtime-livedata-ktx:2.6.1"
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycleviewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+androidx-room-room-compiler = { module = "androidx.room:room-compiler",  version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -28,6 +38,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 [plugins]
+devtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
