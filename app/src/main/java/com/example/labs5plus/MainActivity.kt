@@ -15,31 +15,47 @@ import com.example.labs5plus.ui_components.MainScreen
 import com.example.labs5plus.utils.ItemSaver
 import com.example.labs5plus.utils.ListItem
 import com.example.labs5plus.utils.Routes
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            val navController = rememberNavController()
-            var item = rememberSaveable(stateSaver = ItemSaver)
-            { mutableStateOf(ListItem("", "", "")) }
-            Labs5plusTheme {
-                NavHost(navController = navController,
-                    startDestination = Routes.MAIN_SCREEN.route) {
-                    composable (Routes.MAIN_SCREEN.route) {
-                        MainScreen(this@MainActivity){ listItem ->
-                            item.value = ListItem(listItem.title
-                                , listItem.imageName, listItem.htmlName)
-                            navController.navigate(Routes.INFO_SCREEN.route)
-                        }
-                    }
-                    composable (Routes.INFO_SCREEN.route) {
-                        InfoScreen(item = item.value)
-                    }
-                }
-
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    enableEdgeToEdge()
+    setContent {
+      var item = rememberSaveable(stateSaver = ItemSaver) {
+        mutableStateOf(
+          ListItem(
+            id = 0, title = "", imageName = "",
+            htmlName = "", isfav = false, category = ""
+          )
+        )
+      }
+      val navController = rememberNavController()
+      Labs5plusTheme {
+        NavHost(
+          navController = navController,
+          startDestination = Routes.MAIN_SCREEN.route
+        ) {
+          composable(Routes.MAIN_SCREEN.route) {
+            MainScreen { listItem ->
+              item.value = ListItem(
+                listItem.id,
+                listItem.title,
+                listItem.imageName,
+                listItem.htmlName,
+                listItem.isfav,
+                listItem.category
+              )
+              navController.navigate(Routes.INFO_SCREEN.route)
             }
+          }
+          composable(Routes.INFO_SCREEN.route) {
+            InfoScreen(item = item.value)
+          }
         }
+
+      }
     }
+  }
 }

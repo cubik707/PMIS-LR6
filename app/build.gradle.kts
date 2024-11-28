@@ -52,19 +52,21 @@ android {
 }
 
 dependencies {
+    // Dagger Hilt
     implementation(libs.hilt.android)
-    implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
+
+    // Jetpack Room
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
 
-
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    implementation (libs.androidx.runtime.livedata)
+    // Lifecycle and LiveData
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    annotationProcessor(libs.androidx.room.room.compiler)
-    ksp(libs.androidx.room.room.compiler)
+    implementation(libs.androidx.runtime.livedata)
+
+    // Hilt + Navigation Compose
+    implementation(libs.androidx.hilt.navigation.compose)
 
 
     implementation(libs.androidx.core.ktx)
