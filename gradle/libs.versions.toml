@@ -12,9 +12,17 @@ navigationCompose = "2.8.3"
 roomRuntime = "2.6.1"
 runtimeLivedata = "1.6.5"
 ksp = "1.9.0-1.0.13"
+hiltAndroid = "2.52"
+hiltNavigationCompose = "1.2.0"
+roomKtx = "2.6.1"
 
 
 [libraries]
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigationcompose", version.ref = "hiltNavigationCompose" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref ="roomKtx" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref ="hiltAndroid" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref ="hiltAndroid" }
+
 androidx-runtime-livedata = "androidx.lifecycle:lifecycle-runtime-livedata-ktx:2.6.1"
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycleviewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
